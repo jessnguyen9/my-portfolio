@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, type ReactNode, type ElementType } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -121,11 +121,19 @@ const fadeUp = {
   show: { opacity: 1, y: 0 },
 };
 
-function cn(...classes) {
+function cn(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(" ");
 }
 
-function Section({ id, title, icon: Icon, children, right }) {
+type SectionProps = {
+  id: string;
+  title: string;
+  icon?: ElementType;
+  children: ReactNode;
+  right?: ReactNode;
+};
+
+function Section({ id, title, icon: Icon, children, right }: SectionProps) {
   return (
     <section id={id} className="scroll-mt-24">
       <div className="flex items-end justify-between gap-4">
@@ -144,7 +152,9 @@ function Section({ id, title, icon: Icon, children, right }) {
   );
 }
 
-function Pill({ children }) {
+type PillProps = { children: ReactNode };
+
+function Pill({ children }: PillProps) {
   return (
     <span className="inline-flex items-center rounded-full border bg-background px-3 py-1 text-sm shadow-sm">
       {children}
@@ -152,7 +162,9 @@ function Pill({ children }) {
   );
 }
 
-function NavLink({ href, children }) {
+type NavLinkProps = { href: string; children: ReactNode };
+
+function NavLink({ href, children }: NavLinkProps) {
   return (
     <a
       href={href}
@@ -163,7 +175,13 @@ function NavLink({ href, children }) {
   );
 }
 
-function SocialButton({ href, icon: Icon, label }) {
+type SocialButtonProps = {
+  href: string;
+  icon: ElementType;
+  label: string;
+};
+
+function SocialButton({ href, icon: Icon, label }: SocialButtonProps) {
   return (
     <Button asChild variant="outline" className="rounded-2xl">
       <a href={href} target="_blank" rel="noreferrer">
@@ -175,7 +193,7 @@ function SocialButton({ href, icon: Icon, label }) {
   );
 }
 
-function downloadText(filename, content) {
+function downloadText(filename: string, content: string) {
   const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
@@ -187,8 +205,21 @@ function downloadText(filename, content) {
   URL.revokeObjectURL(url);
 }
 
-function buildResumeMarkdown(data) {
-  const lines = [];
+type ResumeData = {
+  name: string;
+  role: string;
+  location: string;
+  email: string;
+  tagline: string;
+  highlights: string[];
+  skills: string[];
+  experience: { company: string; title: string; dates: string; bullets: string[] }[];
+  projects: { name: string; description: string; impact: string }[];
+  education: { school: string; program: string; dates: string; notes?: string }[];
+};
+
+function buildResumeMarkdown(data: ResumeData) {
+  const lines: string[] = [];
   lines.push(`# ${data.name}`);
   lines.push(`${data.role} • ${data.location}`);
   lines.push(`Email: ${data.email}`);
