@@ -37,7 +37,7 @@ const DATA = {
   links: {
     linkedin: "https://www.linkedin.com/in/jess-788b16176",
     github: "https://github.com/jessnguyen9",
-    resume: "public\resume.pdf", // put a public PDF link or /resume.pdf
+    resume: "C:\Users\jessngyn\my-portfolio\public\resume.pdf"
   },
   about: [
     "I’m a data annotation specialist focused on NLP/LLM training data quality—taxonomy alignment, edge-case handling, and QA calibration.",
