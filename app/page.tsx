@@ -29,15 +29,15 @@ import { Textarea } from "@/components/ui/textarea";
 
 const DATA = {
   name: "Jess Nguyen",
-  role: "Science Annotation Specialist • Data/Analytics",
+  role: "Annotation Specialist • Data Analytics",
   tagline:
     "I build high-quality datasets, improve labeling workflows, and translate messy text into clean, usable signals.",
   location: "Seattle, WA",
-  email: "your.email@example.com",
+  email: "jessnguyen.work@gmail.com",
   links: {
-    linkedin: "https://www.linkedin.com/in/your-handle",
-    github: "https://github.com/your-handle",
-    resume: "#", // put a public PDF link or /resume.pdf
+    linkedin: "https://www.linkedin.com/in/jess-788b16176",
+    github: "https://github.com/jessnguyen9",
+    resume: "public\resume.pdf", // put a public PDF link or /resume.pdf
   },
   about: [
     "I’m a data annotation specialist focused on NLP/LLM training data quality—taxonomy alignment, edge-case handling, and QA calibration.",
@@ -358,12 +358,10 @@ export default function PortfolioWebsite() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Button
-              variant="outline"
-              className="rounded-2xl"
-              onClick={() => downloadText(`${DATA.name.replace(/\s+/g, "_")}_Resume.md`, resumeMd)}
-            >
-              <Download className="mr-2 h-4 w-4" /> Resume
+            <Button asChild variant="outline" className="rounded-2xl">
+              <a href={DATA.links.resume} target="_blank">
+                <Download className="mr-2 h-4 w-4" /> Resume
+              </a>
             </Button>
           </div>
         </div>
