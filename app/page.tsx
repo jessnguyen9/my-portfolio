@@ -439,7 +439,7 @@ export default function PortfolioWebsite() {
                 <div className="flex items-center justify-between gap-3">
                   <div>
                     <div className="text-sm text-muted-foreground">Currently open to</div>
-                    <div className="text-base font-medium">Data / Analytics roles • Contract or FT</div>
+                    <div className="text-base font-medium">Data / Analytics roles • Remote / Contract / Full-time</div>
                   </div>
                   <Button asChild className="rounded-2xl">
                     <a href="#contact">
