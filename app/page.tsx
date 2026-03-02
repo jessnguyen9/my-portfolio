@@ -275,11 +275,11 @@ function ContactCard() {
         <div className="grid gap-3 sm:grid-cols-2">
           <div>
             <div className="mb-1 text-sm text-muted-foreground">Your name</div>
-            <Input value={name} onChange={(e) => setName(e.target.value)} placeholder="Jane Doe" />
+            <Input value={name} onChange={(e) => setName(e.target.value)}  />
           </div>
           <div>
             <div className="mb-1 text-sm text-muted-foreground">Your email</div>
-            <Input value={from} onChange={(e) => setFrom(e.target.value)} placeholder="jane@email.com" />
+            <Input value={from} onChange={(e) => setFrom(e.target.value)}  />
           </div>
         </div>
         <div>
@@ -287,7 +287,8 @@ function ContactCard() {
           <Textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            placeholder="Tell me what you’re working on and what you need help with."
+            placeholder="Interested in data annotaiton, NLP evaluation, or analytics work?
+            I'd love to connect."
             className="min-h-[120px]"
           />
         </div>
@@ -597,10 +598,6 @@ export default function PortfolioWebsite() {
                       <ArrowRight className="ml-auto h-4 w-4" />
                     </a>
                   </Button>
-                  <div className="pt-2 text-xs text-muted-foreground">
-                    Tip: put your resume PDF in <span className="font-medium">/public</span> and set
-                    <span className="font-medium"> DATA.links.resume</span> to <span className="font-medium">/resume.pdf</span>.
-                  </div>
                 </CardContent>
               </Card>
             </div>
