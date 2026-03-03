@@ -457,18 +457,16 @@ export default function PortfolioWebsite() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <p className="text-sm text-muted-foreground">
-                  {DATA.about[0]}
-                </p>
-                <div className="flex flex-wrap gap-2 pt-1">
-                  {DATA.skills
-                    .flatMap((g) => g.items)
-                    .slice(0, 8)
-                    .map((s) => (
-                      <Badge key={s} variant="secondary" className="rounded-full">
-                        {s}
-                      </Badge>
-                    ))}
+                <div className="text-sm text-muted-foreground space-y-1">
+                  <div>
+                    <span className="font-medium text-foreground">Focus:</span> Data quality, NLP datasets, and analytics insights
+                  </div>
+                  <div>
+                    <span className="font-medium text-foreground">Strengths:</span> data validation, error analysis, performance metrics 
+                  </div>
+                  <div>
+                    <span className="font-medium text-foreground">Tools:</span> SQL • Python • Excel • data dashboards
+                  </div>
                 </div>
               </CardContent>
             </Card>
