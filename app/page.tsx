@@ -29,10 +29,10 @@ import { Textarea } from "@/components/ui/textarea";
 
 const DATA = {
   name: "Jess Nguyen",
-  role: "Annotation Specialist • Data Analytics",
+  role: "Data Annotation Specialist • Analytics",
   tagline:
     "I build high-quality datasets, improve labeling workflows, and translate messy text into clean, usable signals.",
-  location: "Seattle, WA",
+  location: "Bellevue, WA",
   email: "jessnguyen.work@gmail.com",
   links: {
     linkedin: "https://www.linkedin.com/in/jess-788b16176",
@@ -40,13 +40,13 @@ const DATA = {
     resume: "/resume.pdf"
   },
   about: [
-    "I’m a data annotation specialist focused on NLP/LLM training data quality—taxonomy alignment, edge-case handling, and QA calibration.",
-    "I love turning ambiguous customer language into structured labels, and improving processes so teams can scale without sacrificing accuracy.",
+    "I’m a data annotation specialist. I work at the intersection of data quality and machine learning. My focus is improving datasets, evaluating model outputs, and turning human language into structured signals that model can learn from.",
+    "I enjoy finding patterns in messy data and turning it into something useful.Fun fact: I like building personal trackers and dashboards to analyze everyday things like spending habbits and productivity. ",
   ],
   highlights: [
-    "20,000+ annotations delivered with >97% accuracy",
-    "Disagreement rate kept under 5% across 800+ items",
-    "Improved SOP clarity via reviews + corrections with SME",
+    "60,000+ annotations supporting ML model training",
+    "Improved dataset accuracy to 99.4% via error analysis",
+    "SQL & Excel dashboards supoprting forecasting and analytics",
   ],
   skills: [
     {
