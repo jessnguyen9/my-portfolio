@@ -457,9 +457,9 @@ export default function PortfolioWebsite() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                {DATA.about.map((p, idx) => (
-                  <p className="text-sm text-muted-foreground">{DATA.about[0]}</p>
-                ))}
+                <p className="text-sm text-muted-foreground">
+                  {DATA.about[0]}
+                </p>
                 <div className="flex flex-wrap gap-2 pt-1">
                   {DATA.skills
                     .flatMap((g) => g.items)
@@ -605,7 +605,7 @@ export default function PortfolioWebsite() {
                         {g.group}
                       </div>
 
-                      <div className="mt-1 text-sm">
+                      <div className="mt-1 text-sm text-muted-foreground">
                         {g.items.join(" • ")}
                       </div>
                     </div>
