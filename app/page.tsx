@@ -459,13 +459,13 @@ export default function PortfolioWebsite() {
               <CardContent className="space-y-3">
                 <div className="text-sm text-muted-foreground space-y-1">
                   <div>
-                    <span className="font-medium text-foreground">Focus:</span> Data quality, NLP datasets, and analytics insights
+                    <span className="font-medium text-muted-foreground">Focus :</span> data quality, NLP datasets, and analytics insights
                   </div>
                   <div>
-                    <span className="font-medium text-foreground">Strengths:</span> data validation, error analysis, performance metrics 
+                    <span className="font-medium text-muted-foreground">Strengths :</span> data validation, error analysis, performance metrics 
                   </div>
                   <div>
-                    <span className="font-medium text-foreground">Tools:</span> SQL • Python • Excel • data dashboards
+                    <span className="font-medium text-muted-foreground">Tools :</span> SQL • Python • Excel • data dashboards
                   </div>
                 </div>
               </CardContent>
