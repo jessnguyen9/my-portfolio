@@ -588,16 +588,15 @@ export default function PortfolioWebsite() {
           <Section id="skills" title="Skills" icon={Sparkles}>
             <Card className="rounded-3xl shadow-sm">
               <CardContent className="p-6 sm:p-8">
-                <div className="grid gap-4 sm:grid-cols-2">
-                  {DATA.skills.map((g) => (
-                    <div key={g.group} className="rounded-2xl border bg-background p-4">
-                      <div className="text-sm font-medium">{g.group}</div>
-                      <div className="mt-2 flex flex-wrap gap-2">
-                        {g.items.map((s) => (
-                          <Badge key={s} variant="secondary" className="rounded-full">
-                            {s}
-                          </Badge>
-                        ))}
+                <div className="space-y-4">
+                 {DATA.skills.map((g) => (
+                    <div key={g.group}>
+                      <div className="text-sm font-medium text-muted-foreground">
+                        {g.group}
+                      </div>
+
+                      <div className="mt-1 text-sm">
+                        {g.items.join(" • ")}
                       </div>
                     </div>
                   ))}
