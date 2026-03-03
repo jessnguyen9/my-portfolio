@@ -41,7 +41,7 @@ const DATA = {
   },
   about: [
     "I’m a data annotation specialist. I work at the intersection of data quality and machine learning. My focus is improving datasets, evaluating model outputs, and turning human language into structured signals that model can learn from.",
-    "I enjoy finding patterns in messy data and turning it into something useful.Fun fact: I like building personal trackers and dashboards to analyze everyday things like spending habbits and productivity. ",
+    "I enjoy finding patterns in messy data and turning it into something useful. Fun fact: I like building personal trackers and dashboards to analyze everyday things like spending habbits and productivity. ",
   ],
   highlights: [
     "60,000+ annotations supporting ML model training",
@@ -87,21 +87,33 @@ const DATA = {
       title: "Science Annotation Specialist",
       dates: "2025 – Present",
       bullets: [
-        "Delivered high-volume, high-accuracy annotations for NLP model training (classification, NER, intent).",
-        "Identified ambiguous edge cases and improved guideline clarity to reduce labeling inconsistency.",
-        "Partnered with SMEs to calibrate QA, keep disagreement low, and maintain policy alignment.",
+        "Delivered 60K+ NLP annotations supporting machine learning model training and evaluation.",
+        "Improved dataset accuracy to 99%+ through error analysis and taxonomy refinement.",
+        "Evaluated LLM responses and return-intent signals to improve model output quality.",
       ],
-      tags: ["NLP", "Annotation", "QA", "LLM"],
+      tags: ["NLP", "Data Annotation", "LLM Evaluation"],
     },
     {
       company: "YYY Catering",
       title: "Business Operations Analyst",
       dates: "2021 – 2025",
       bullets: [
-        "Built forecasting dashboards to improve ordering accuracy and reduce waste.",
-        "Created operational workflows across hiring, inventory, and reporting.",
+        "Built Excel dashboards and forecasting models improving inventory planning.",
+        "Analyzed sales and demand trends to support pricing and menu strategy.",
+        "Reduced operational waste by 20% through data-driven inventory tracking.",
       ],
-      tags: ["Ops", "Dashboards", "Excel"],
+      tags: ["Data Analytics", "Dashboards", "Excel", "Forecasting"],
+    },
+    {
+      company: "M&H Produce & Variety",
+      title: "Sales & Customer Opertations",
+      dates: "2019-2021",
+      bullets: [
+        "Analyzed sales and inventory data using SQL, SAP, and Quickbooks.",
+        "Built demand forecasts improving stock availability and reducing stockouts.",
+        "Used customer behavior insights to improve promotions and repeat purchases.",
+      ],
+      tags: ["SQL", "SAP", "Inventory Analytics"],
     },
   ],
   projects: [
@@ -446,9 +458,7 @@ export default function PortfolioWebsite() {
               </CardHeader>
               <CardContent className="space-y-3">
                 {DATA.about.map((p, idx) => (
-                  <p key={idx} className="text-sm text-muted-foreground">
-                    {p}
-                  </p>
+                  <p className="text-sm text-muted-foreground">{DATA.about[0]}</p>
                 ))}
                 <div className="flex flex-wrap gap-2 pt-1">
                   {DATA.skills
