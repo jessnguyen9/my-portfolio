@@ -49,13 +49,37 @@ const DATA = {
     "Improved SOP clarity via reviews + corrections with SME",
   ],
   skills: [
-    "Data Labeling & QA",
-    "NLP / LLM Evaluation",
-    "Taxonomy Design",
-    "SQL",
-    "Python",
-    "Dashboards (Sheets/Excel)",
-    "Process Documentation",
+    {
+      group: "AI / NLP",
+      items: [
+        "Data annotation",
+        "LLM response evaluation",
+        "Taxonomy & label design",
+        "QA calibration",
+      ],
+    },
+    {
+      group: "Data / Analytics",
+      items: [
+        "SQL",
+        "Python",
+        "Data cleaning",
+        "Data visualization",
+        "Metrics tracking",
+        "Dashboard Development",
+        "EDA",
+        "A/B Testing (basic)",
+      ],
+    },
+    {
+      group: "Tools",
+      items: [
+        "Advanced Excel",
+        "Google Sheets",
+        "Tableau / Power BI",
+        "Git / GitHub",
+      ]
+    }
   ],
   experience: [
     {
@@ -212,7 +236,7 @@ type ResumeData = {
   email: string;
   tagline: string;
   highlights: string[];
-  skills: string[];
+  skills: { group: string; items: string[] }[];
   experience: { company: string; title: string; dates: string; bullets: string[] }[];
   projects: { name: string; description: string; impact: string }[];
   education: { school: string; program: string; dates: string; notes?: string }[];
@@ -231,7 +255,9 @@ function buildResumeMarkdown(data: ResumeData) {
   data.highlights.forEach((h) => lines.push(`- ${h}`));
   lines.push("");
   lines.push(`## Skills`);
-  lines.push(data.skills.join(" • "));
+  data.skills.forEach((g) => {
+    lines.push(`- ${g.group}: ${g.items.join(" • ")}`);
+  });
   lines.push("");
   lines.push(`## Experience`);
   data.experience.forEach((e) => {
@@ -425,11 +451,14 @@ export default function PortfolioWebsite() {
                   </p>
                 ))}
                 <div className="flex flex-wrap gap-2 pt-1">
-                  {DATA.skills.slice(0, 6).map((s) => (
-                    <Badge key={s} variant="secondary" className="rounded-full">
-                      {s}
-                    </Badge>
-                  ))}
+                  {DATA.skills
+                    .flatMap((g) => g.items)
+                    .slice(0, 8)
+                    .map((s) => (
+                      <Badge key={s} variant="secondary" className="rounded-full">
+                        {s}
+                      </Badge>
+                    ))}
                 </div>
               </CardContent>
             </Card>
@@ -559,11 +588,18 @@ export default function PortfolioWebsite() {
           <Section id="skills" title="Skills" icon={Sparkles}>
             <Card className="rounded-3xl shadow-sm">
               <CardContent className="p-6 sm:p-8">
-                <div className="flex flex-wrap gap-2">
-                  {DATA.skills.map((s) => (
-                    <Badge key={s} className="rounded-full" variant="secondary">
-                      {s}
-                    </Badge>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {DATA.skills.map((g) => (
+                    <div key={g.group} className="rounded-2xl border bg-background p-4">
+                      <div className="text-sm font-medium">{g.group}</div>
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        {g.items.map((s) => (
+                          <Badge key={s} variant="secondary" className="rounded-full">
+                            {s}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
                   ))}
                 </div>
               </CardContent>
